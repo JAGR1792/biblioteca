@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Biblioteca</h1>
+        <div class="menu-grid">
+            <div class="menu-item" data-icon="add">
+                <a href="{{ url_for('agregar_libro') }}"><i></i>Agregar libro</a>
+            </div>
+            <div class="menu-item" data-icon="search">
+                <a href="{{ url_for('buscar_libro') }}"><i></i>Buscar libro por ID</a>
+            </div>
+            <div class="menu-item" data-icon="delete">
+                <a href="{{ url_for('eliminar_libro') }}"><i></i>Eliminar libro por ID</a>
+            </div>
+            <div class="menu-item" data-icon="list">
+                <a href="{{ url_for('mostrar_libros') }}"><i></i>Mostrar todos los libros</a>
+            </div>
+            <div class="menu-item" data-icon="borrow">
+                <a href="{{ url_for('prestamo_libro') }}"><i></i>Prestar libro</a>
+            </div>
+            <div class="menu-item" data-icon="return">
+                <a href="{{ url_for('devolver_libro') }}"><i></i>Devolver libro</a>
+            </div>
+            <div class="menu-item" data-icon="borrowed">
+                <a href="{{ url_for('libros_prestados') }}"><i></i>Libros prestados</a>
+            </div>
+            <div class="menu-item" data-icon="benchmark">
+                <a href="{{ url_for('benchmark') }}"><i></i>Benchmark (medición de tiempos)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

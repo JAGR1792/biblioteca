@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark Biblioteca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Benchmark de eficiencia</h2>
+    <form method="post">
+        <label for="n_libros">Cantidad de libros (ej: 10000):</label>
+        <input type="number" name="n_libros" id="n_libros" value="10000" min="100" max="100000">
+        <input type="submit" value="Ejecutar Benchmark">
+    </form>
+    <div>
+        {{ resultado|safe }}
+    </div>
+    <a href="{{ url_for('index') }}">Volver al menú</a>
+</div>
+</body>
+</html>

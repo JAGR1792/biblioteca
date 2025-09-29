@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Prestados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Libros prestados</h2>
+    {% if prestados %}
+    <ul>
+        {% for libro in prestados %}
+            <li>{{ libro.id }} - {{ libro.titulo }} ({{ libro.autor }})</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No hay libros prestados.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Volver al menú</a>
+</div>
+</body>
+</html>

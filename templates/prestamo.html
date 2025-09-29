@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestar Libro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Prestar libro</h2>
+    <form method="post">
+        <label for="id">ID del libro a prestar:</label>
+        <input type="text" name="id" id="id" required>
+        <input type="submit" value="Prestar">
+    </form>
+    <p>{{ resultado }}</p>
+    {% if tiempo %}
+        <p>Tiempo de operación: {{ tiempo }} segundos</p>
+    {% endif %}
+    <h3>Libros disponibles:</h3>
+    <ul> 
+        {% for libro in disponibles %}
+            <li>{{ libro.id }} - {{ libro.titulo }} ({{ libro.autor }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Volver al menú</a>
+</div>
+</body>
+</html>

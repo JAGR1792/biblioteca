@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar libro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Buscar libro por ID</h2>
+        <form method="post">
+            ID: <input name="id" type="text" title="Ingrese el ID del libro" placeholder="ID del libro"><br>
+            <input type="submit" value="Buscar">
+        </form>
+        {% if libro %}
+            <table class="books-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Género</th>
+                        <th>Año</th>
+                    </tr>
+                </thead>
+                <tbody> 
+             <tr>
+                        <td>{{ libro.id }}</td>
+                        <td>{{ libro.titulo }}</td>
+                        <td>{{ libro.autor }}</td>
+                        <td>{{ libro.genero }}</td>
+                        <td>{{ libro.año }}</td>
+                    </tr>
+        {% elif libro is not none %}
+            <p>No encontrado.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Volver al menú</a>
+    </div>
+</body>
+</html>

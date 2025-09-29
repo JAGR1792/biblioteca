@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar libro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Agregar libro</h2>
+        <form method="post">
+            ID: <input name="id" type="text" title="Ingrese el ID del libro" placeholder="ID del libro"><br>
+            Título: <input name="titulo" type="text" title="Ingrese el título del libro" placeholder="Título del libro"><br>
+            Autor: <input name="autor" type="text" title="Ingrese el autor del libro" placeholder="Autor del libro"><br>
+            Género: <input name="genero" type="text" title="Ingrese el género del libro" placeholder="Género del libro"><br>
+            Año: <input name="año" type="number" title="Ingrese el año de publicación" placeholder="Año de publicación"><br>
+            <input type="submit" value="Agregar">
+        </form>
+        <p>{{ resultado }}</p>
+        <a href="{{ url_for('index') }}">Volver al menú</a>
+    </div>
+</body>
+</html>
